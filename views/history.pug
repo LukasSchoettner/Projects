@@ -1,0 +1,25 @@
+extends post_login_layout
+
+block head
+  title Transaktionen
+
+block content
+
+
+  table(class = "table table-striped" id="main_content_index_history")
+    
+    tr
+      th(colspan = "5" class="text-center") Ihre Transaktionen
+    tr
+      th Symbol
+      th Name
+      th Anzahl
+      th Preis
+      th Zeitpunkt des Kaufs
+      each row in rows
+        tr 
+          td  #{row.symbol}
+          td  #{row.name}
+          td  #{row.count}
+          td  #{row.price}
+          td  #{row.created_at}

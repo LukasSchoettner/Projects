@@ -1,0 +1,88 @@
+header {
+
+}
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  background-image: url(../images/digital_world.jpg);
+}
+
+section {
+    margin-top: 200px;
+    min-height: 800px;
+}
+
+
+#sbq_form{
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+
+#accoptions{
+  width: 80%;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+#dropdownMenuButton1{
+  border: 0px;
+}
+
+footer{
+  height: 150px
+}
+
+#main_content_index_history{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  margin-bottom: 100px;
+}
+
+#success {
+  margin-top: 50px;
+}
+
+footer{
+  padding-top: 40px;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer_columns{
+  width: 200px; /*ohne width shifted der ganze block bei hover*/
+}
+
+.footer_columns h3{
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(68, 68, 68);
+}
+
+.footer_columns a{
+  font-size: 16px;
+  color: rgb(100, 109, 117);
+  display: block;
+}
+
+.footer_columns a:hover{
+  font-weight: bold;
+}
+
+#deletelink {
+  color: red;
+}
+
+#awkward_content{
+  background-color: white;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}

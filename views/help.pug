@@ -1,0 +1,20 @@
+extends post_login_layout
+
+block content
+  div(class="container")
+    div(class="alert alert-danger") 
+      div(class="alert alert-danger") 
+        div(class="alert alert-danger") 
+          if user
+            div(class="alert alert-danger") There is no help in this mortal world, would you like to #[a(href="/accoptions" id="deletelink") delete] your account insted?
+          if !user
+            div(class="alert alert-danger") There is no help
+        
+        
+        
+        
+        
+        
+        
+        
+        

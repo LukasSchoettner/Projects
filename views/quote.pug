@@ -1,0 +1,34 @@
+extends post_login_layout
+
+block head
+  title Kursabfrage
+
+block content
+  
+  
+  div(class="mask d-flex align-items-center h-100 gradient-custom-3")
+    div(class="container h-100")
+      div(class="row d-flex justify-content-center align-items-center h-100")
+        div(class="col-12 col-md-9 col-lg-7 col-xl-6")
+          div(class="card" style="border-radius: 15px;")
+            div(class="card-body p-5")
+              h2(class="text-uppercase text-center mb-5") Aktie abrufen
+
+              form(id="sbq_form", action="/quote", method="post")
+
+                div(class="form-outline mb-4")
+                  label(class="form-label" for="symbol") Tickersymbol
+                  input(type="text" id="symbol" name="symbol" class="form-control form-control-lg" placeholder="z.B. AAPL")
+                    
+                div(class="d-flex justify-content-center")
+                  button(type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body") Abrufen
+
+  if result
+    div(class="container")
+      div(class="alert alert-info") Eine #{result.companyName} (#{result.symbol}) Aktie kostet $ #{result.latestPrice}
+    
+  if error 
+    div(class="container")
+      div(class="alert alert-danger") Error: #{error}
+    
+  

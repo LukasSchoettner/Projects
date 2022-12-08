@@ -1,0 +1,34 @@
+extends post_login_layout
+
+block head
+  title Depotübersicht
+
+
+block content
+
+  - var totaltotal = 0;
+  if shares != undefined
+  
+    table(class = "table table-striped" id="main_content_index_history")
+      tr
+        th(colspan = "5" class="text-center") Depotübersicht
+      tr
+        th Tickersymbol
+        th Name
+        th Anzahl Aktien
+        th Preis
+        th Gesamt
+        each share in shares
+          tr
+            td  #{share[0]}
+            td  #{share[1]}
+            td  #{share[2]}
+            td  $ #{share[3]}
+            td  $ #{share[4]}
+            - totaltotal = totaltotal + share[4]
+        tr
+          td 
+          td
+          td
+          td
+          td  $ #{totaltotal}

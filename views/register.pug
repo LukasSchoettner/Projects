@@ -1,0 +1,43 @@
+extends pre_login_layout.pug
+
+block head
+  title Registrieren
+
+block content
+
+  div(class="mask d-flex align-items-center h-100 gradient-custom-3")
+    div(class="container h-100")
+      div(class="row d-flex justify-content-center align-items-center h-100")
+        div(class="col-12 col-md-9 col-lg-7 col-xl-6")
+          div(class="card" style="border-radius: 15px;")
+            div(class="card-body p-5")
+              h2(class="text-uppercase text-center mb-5") Registrieren
+
+              form(id="register_form", action="/register", method="post")
+
+                div(class="form-outline mb-4")
+                  label(class="form-label" for="username") Nutzername
+                  input(type="text" id="username" name="username" class="form-control form-control-lg" placeholder="Name")
+
+                div(class="form-outline mb-4")
+                  label(class="form-label" for="password") Passwort
+                  input(type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Passwort")
+
+                div(class="form-outline mb-4")
+                  label(class="form-label" for="confirmation") Passwort bestätigen
+                  input(type="password" id="confirmation" name="confirmation" class="form-control form-control-lg" placeholder="Passwort")
+
+                div(class="d-flex justify-content-center")
+                  button(type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body") Register
+
+                p(class="text-center text-muted mt-5 mb-0") Sie sind bereits registriert? 
+                  a(href="/login" class="fw-bold text-body text-center") Hier anmelden!
+
+  if success != undefined
+    div(class="container" id="success")
+      div(class="alert alert-success") #{success}
+      
+  if error 
+    div(class="container")
+      div(class="alert alert-danger") Error: #{error}
+                      

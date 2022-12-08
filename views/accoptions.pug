@@ -1,0 +1,57 @@
+extends post_login_layout
+
+block content
+  
+
+  div(class="accordion" id="accoptions")
+    div(class="accordion-item")
+      h2(class="accordion-header")
+        button(class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#passwordcollapse" aria-expanded="true" aria-controls="passwordcollapse") Passwort ändern
+      div(id="passwordcollapse" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accoptions")
+        div(class="accordion-body")
+          div(class="mask d-flex align-items-center h-100 gradient-custom-3")
+            div(class="container h-100")
+              div(class="row d-flex justify-content-center align-items-center h-100")
+                div(class="col-12 col-md-9 col-lg-7 col-xl-6")
+                  div(class="card" style="border-radius: 15px;")
+                    div(class="card-body p-5" id="form")
+                      h2(class="text-uppercase text-center mb-5") Passwort ändern
+        
+                      form(id="register_form", action="/newpw", method="post")
+        
+                        div(class="form-outline mb-4")
+                          label(class="form-label" for="password") Neues Passwort
+                          input(type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Passwort")
+        
+                        div(class="form-outline mb-4")
+                          label(class="form-label" for="confirmation") Passwort bestätigen
+                          input(type="password" id="confirmation" name="confirmation" class="form-control form-control-lg" placeholder="Passwort")
+        
+                        div(class="d-flex justify-content-center")
+                          button(type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body") Absenden
+
+
+    div(class="accordion-item")
+      h2(class="accordion-header")
+        button(class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#deletecollapse" aria-expanded="true" aria-controls="deletecollapse") Account löschen
+      div(id="deletecollapse" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accoptions")
+        div(class="accordion-body")
+          div(class="mask d-flex align-items-center h-100 gradient-custom-3")
+            div(class="container h-100")
+              div(class="row d-flex justify-content-center align-items-center h-100")
+                div(class="col-12 col-md-9 col-lg-7 col-xl-6")
+                  div(class="card" style="border-radius: 15px;")
+                    div(class="card-body p-5" id="form")
+                      h2(class="text-uppercase text-center mb-5") Account löschen
+        
+                      form(id="register_form", action="/delete", method="post")
+                        div(class="d-flex justify-content-center")
+                          button(type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body") Endgültig löschen
+                          
+  if success != undefined
+    div(class="container" id="success")
+      div(class="alert alert-success") #{success}
+      
+  if error 
+    div(class="container")
+      div(class="alert alert-danger") Error: #{error}
